@@ -21,7 +21,7 @@ public VipM_OnInitModules() {
 }
 
 @OnPlayerKilled(const victimIndex, inflictorIndex, killerIndex) {
-    if (rg_is_player_blind(killerIndex)) {
+    if (!is_user_alive(killerIndex) || rg_is_player_blind(killerIndex)) {
         return;
     }
 
