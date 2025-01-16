@@ -20,7 +20,7 @@ public VipM_OnInitModules() {
     RegisterHookChain(RG_CBasePlayer_Killed, "@OnPlayerKilled", .post = true);
 }
 
-@OnPlayerKilled(const victimIndex, inflictorIndex, killerIndex) {
+@OnPlayerKilled(const victimIndex, killerIndex) {
     if (!is_user_alive(killerIndex) || rg_is_player_blind(killerIndex)) {
         return;
     }
